@@ -17,7 +17,7 @@ This repository contains <b>assignments</b>, <b>projects</b>, and <b>classwork</
 
 ---
 
-# 🔽 🟦 C Module
+### 🔽 🟦 C Module
 <details>
 <summary><strong>Click to Expand</strong></summary>
 
@@ -34,7 +34,7 @@ This repository contains <b>assignments</b>, <b>projects</b>, and <b>classwork</
 
 ---
 
-# 🔽 ☕ Core Java Module
+### 🔽 ☕ Core Java Module
 <details>
 <summary><strong>Click to Expand</strong></summary>
 
@@ -51,7 +51,7 @@ This repository contains <b>assignments</b>, <b>projects</b>, and <b>classwork</
 
 ---
 
-# 🔽 🗄️ SQL Module
+### 🔽 🗄️ SQL Module
 <details>
 <summary><strong>Click to Expand</strong></summary>
 
