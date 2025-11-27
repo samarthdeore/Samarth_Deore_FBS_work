@@ -1,24 +1,10 @@
-<!-- 🌈 HEADER BANNER -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Programming%20Modules-Repository-blueviolet?style=for-the-badge">
-</p>
+
 
 <h1 align="center">📚 Programming Modules Repository</h1>
 
 <p align="center">  
 Welcome to my collection of programming work!  
 This repository contains <b>assignments</b>, <b>projects</b>, and <b>classwork</b> organized by programming language modules.  
-</p>
-
----
-
-## 🏷️ Badges
-
-<p>
-  <img src="https://img.shields.io/badge/C%20Programming-blue?style=flat-square">
-  <img src="https://img.shields.io/badge/Core%20Java-red?style=flat-square">
-  <img src="https://img.shields.io/badge/SQL-yellow?style=flat-square">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square">
 </p>
 
 ---
