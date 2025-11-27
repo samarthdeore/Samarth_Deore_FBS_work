@@ -9,7 +9,7 @@ This repository contains <b>assignments</b>, <b>projects</b>, and <b>classwork</
 
 ---
 
-## 📂 Modules
+# 📂 Modules
 
 - 🟦 **[C Module](https://github.com/samarthdeore/Samarth_Deore_FBS_work/tree/main/FBS%20Workspace/C%20programing)**
 - ☕ **[Core Java Module](https://github.com/samarthdeore/Samarth_Deore_FBS_work/tree/main/FBS%20Workspace/Java)**
