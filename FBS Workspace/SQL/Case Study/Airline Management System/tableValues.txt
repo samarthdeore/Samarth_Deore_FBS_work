@@ -1,0 +1,407 @@
+mysql> INSERT INTO passengers VALUES
+    -> (1,'Aarav','Sharma',9876543210,'aarav@gmail.com','window'),
+    -> (2,'Priya','Patel',9876543211,'priya@gmail.com','aisle'),
+    -> (3,'Rohan','Verma',9876543212,'rohan@gmail.com','middle'),
+    -> (4,'Ananya','Singh',9876543213,'ananya@gmail.com','window'),
+    -> (5,'Vikram','Kumar',9876543214,'vikram@gmail.com','aisle'),
+    -> (6,'Meera','Iyer',9876543215,'meera@gmail.com','window'),
+    -> (7,'Arjun','Nair',9876543216,'arjun@gmail.com','aisle'),
+    -> (8,'Kavya','Desai',9876543217,'kavya@gmail.com','middle'),
+    -> (9,'Sahil','Reddy',9876543218,'sahil@gmail.com','window'),
+    -> (10,'Neha','Joshi',9876543219,'neha@gmail.com','aisle'),
+    -> (11,'Dev','Chopra',9876543220,'dev@gmail.com','window'),
+    -> (12,'Isha','Malhotra',9876543221,'isha@gmail.com','aisle'),
+    -> (13,'Karan','Mehta',9876543222,'karan@gmail.com','window'),
+    -> (14,'Sneha','Pillai',9876543223,'sneha@gmail.com','middle'),
+    -> (15,'Tara','Bose',9876543224,'tara@gmail.com','aisle'),
+    -> (16,'Raj','Kapoor',9876543225,'raj@gmail.com','window'),
+    -> (17,'Pooja','Gupta',9876543226,'pooja@gmail.com','middle'),
+    -> (18,'Nikhil','Rao',9876543227,'nikhil@gmail.com','aisle'),
+    -> (19,'Simran','Das',9876543228,'simran@gmail.com','window'),
+    -> (20,'Amit','Sen',9876543229,'amit@gmail.com','aisle');
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table passengers;
++--------------+--------+----------+------------+------------------+-----------+
+| passenger_id | f_name | l_name   | m_no       | email            | seat_pref |
++--------------+--------+----------+------------+------------------+-----------+
+|            1 | Aarav  | Sharma   | 9876543210 | aarav@gmail.com  | window    |
+|            2 | Priya  | Patel    | 9876543211 | priya@gmail.com  | aisle     |
+|            3 | Rohan  | Verma    | 9876543212 | rohan@gmail.com  | middle    |
+|            4 | Ananya | Singh    | 9876543213 | ananya@gmail.com | window    |
+|            5 | Vikram | Kumar    | 9876543214 | vikram@gmail.com | aisle     |
+|            6 | Meera  | Iyer     | 9876543215 | meera@gmail.com  | window    |
+|            7 | Arjun  | Nair     | 9876543216 | arjun@gmail.com  | aisle     |
+|            8 | Kavya  | Desai    | 9876543217 | kavya@gmail.com  | middle    |
+|            9 | Sahil  | Reddy    | 9876543218 | sahil@gmail.com  | window    |
+|           10 | Neha   | Joshi    | 9876543219 | neha@gmail.com   | aisle     |
+|           11 | Dev    | Chopra   | 9876543220 | dev@gmail.com    | window    |
+|           12 | Isha   | Malhotra | 9876543221 | isha@gmail.com   | aisle     |
+|           13 | Karan  | Mehta    | 9876543222 | karan@gmail.com  | window    |
+|           14 | Sneha  | Pillai   | 9876543223 | sneha@gmail.com  | middle    |
+|           15 | Tara   | Bose     | 9876543224 | tara@gmail.com   | aisle     |
+|           16 | Raj    | Kapoor   | 9876543225 | raj@gmail.com    | window    |
+|           17 | Pooja  | Gupta    | 9876543226 | pooja@gmail.com  | middle    |
+|           18 | Nikhil | Rao      | 9876543227 | nikhil@gmail.com | aisle     |
+|           19 | Simran | Das      | 9876543228 | simran@gmail.com | window    |
+|           20 | Amit   | Sen      | 9876543229 | amit@gmail.com   | aisle     |
++--------------+--------+----------+------------+------------------+-----------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO aircraft VALUES
+    -> (1,101,'Airbus A320',180),
+    -> (2,102,'Boeing 737',190),
+    -> (3,103,'Airbus A330',250),
+    -> (4,104,'Boeing 777',300),
+    -> (5,105,'ATR 72',70),
+    -> (6,106,'Boeing 787',280),
+    -> (7,107,'Airbus A350',300),
+    -> (8,108,'Boeing 767',260),
+    -> (9,109,'Airbus A319',160),
+    -> (10,110,'Embraer E190',100),
+    -> (11,111,'Boeing 757',240),
+    -> (12,112,'Airbus A340',270),
+    -> (13,113,'Airbus A321',200),
+    -> (14,114,'Boeing 747',400),
+    -> (15,115,'Boeing 737 MAX',190),
+    -> (16,116,'Airbus A220',120),
+    -> (17,117,'Boeing 720',150),
+    -> (18,118,'Airbus A310',250),
+    -> (19,119,'Boeing 727',170),
+    -> (20,120,'Airbus A380',500);
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table aircraft;
++-------------+------------+----------------+-------------+
+| aircraft_id | registr_no | model          | total_seats |
++-------------+------------+----------------+-------------+
+|           1 |        101 | Airbus A320    |         180 |
+|           2 |        102 | Boeing 737     |         190 |
+|           3 |        103 | Airbus A330    |         250 |
+|           4 |        104 | Boeing 777     |         300 |
+|           5 |        105 | ATR 72         |          70 |
+|           6 |        106 | Boeing 787     |         280 |
+|           7 |        107 | Airbus A350    |         300 |
+|           8 |        108 | Boeing 767     |         260 |
+|           9 |        109 | Airbus A319    |         160 |
+|          10 |        110 | Embraer E190   |         100 |
+|          11 |        111 | Boeing 757     |         240 |
+|          12 |        112 | Airbus A340    |         270 |
+|          13 |        113 | Airbus A321    |         200 |
+|          14 |        114 | Boeing 747     |         400 |
+|          15 |        115 | Boeing 737 MAX |         190 |
+|          16 |        116 | Airbus A220    |         120 |
+|          17 |        117 | Boeing 720     |         150 |
+|          18 |        118 | Airbus A310    |         250 |
+|          19 |        119 | Boeing 727     |         170 |
+|          20 |        120 | Airbus A380    |         500 |
++-------------+------------+----------------+-------------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO flight VALUES
+    -> (1,'London','Delhi','2025-10-20 08:00','2025-10-20 18:00',1),
+    -> (2,'Doha','New York','2025-10-21 09:00','2025-10-21 19:00',2),
+    -> (3,'Mumbai','Dubai','2025-10-22 07:00','2025-10-22 10:00',3),
+    -> (4,'Paris','Berlin','2025-10-23 10:00','2025-10-23 12:30',4),
+    -> (5,'Tokyo','Singapore','2025-10-24 09:00','2025-10-24 15:00',5),
+    -> (6,'Sydney','Melbourne','2025-10-25 11:00','2025-10-25 12:30',6),
+    -> (7,'Bangkok','Kuala Lumpur','2025-10-26 14:00','2025-10-26 15:30',7),
+    -> (8,'Rome','Paris','2025-10-27 06:00','2025-10-27 08:30',8),
+    -> (9,'New York','Toronto','2025-10-28 08:00','2025-10-28 10:00',9),
+    -> (10,'Dubai','London','2025-10-29 05:00','2025-10-29 09:30',10),
+    -> (11,'Delhi','Goa','2025-10-30 09:00','2025-10-30 11:00',11),
+    -> (12,'Bali','Singapore','2025-10-31 13:00','2025-10-31 15:00',12),
+    -> (13,'Singapore','Tokyo','2025-11-01 07:00','2025-11-01 15:00',13),
+    -> (14,'Berlin','Amsterdam','2025-11-02 06:00','2025-11-02 08:00',14),
+    -> (15,'Toronto','Vancouver','2025-11-03 09:00','2025-11-03 11:00',15),
+    -> (16,'Melbourne','Sydney','2025-11-04 10:00','2025-11-04 11:30',16),
+    -> (17,'London','Doha','2025-11-05 08:00','2025-11-05 12:00',17),
+    -> (18,'Doha','New York','2025-11-05 14:00','2025-11-05 22:00',18),
+    -> (19,'Paris','Mumbai','2025-11-06 10:00','2025-11-06 20:00',19),
+    -> (20,'Dubai','Sydney','2025-11-07 10:00','2025-11-07 22:00',20);
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table flight;
++-----------+-------------+--------------+---------------------+---------------------+-------------+
+| flight_id | destination | origin       | departure_time      | arrival_time        | aircraft_id |
++-----------+-------------+--------------+---------------------+---------------------+-------------+
+|         1 | London      | Delhi        | 2025-10-20 08:00:00 | 2025-10-20 18:00:00 |           1 |
+|         2 | Doha        | New York     | 2025-10-21 09:00:00 | 2025-10-21 19:00:00 |           2 |
+|         3 | Mumbai      | Dubai        | 2025-10-22 07:00:00 | 2025-10-22 10:00:00 |           3 |
+|         4 | Paris       | Berlin       | 2025-10-23 10:00:00 | 2025-10-23 12:30:00 |           4 |
+|         5 | Tokyo       | Singapore    | 2025-10-24 09:00:00 | 2025-10-24 15:00:00 |           5 |
+|         6 | Sydney      | Melbourne    | 2025-10-25 11:00:00 | 2025-10-25 12:30:00 |           6 |
+|         7 | Bangkok     | Kuala Lumpur | 2025-10-26 14:00:00 | 2025-10-26 15:30:00 |           7 |
+|         8 | Rome        | Paris        | 2025-10-27 06:00:00 | 2025-10-27 08:30:00 |           8 |
+|         9 | New York    | Toronto      | 2025-10-28 08:00:00 | 2025-10-28 10:00:00 |           9 |
+|        10 | Dubai       | London       | 2025-10-29 05:00:00 | 2025-10-29 09:30:00 |          10 |
+|        11 | Delhi       | Goa          | 2025-10-30 09:00:00 | 2025-10-30 11:00:00 |          11 |
+|        12 | Bali        | Singapore    | 2025-10-31 13:00:00 | 2025-10-31 15:00:00 |          12 |
+|        13 | Singapore   | Tokyo        | 2025-11-01 07:00:00 | 2025-11-01 15:00:00 |          13 |
+|        14 | Berlin      | Amsterdam    | 2025-11-02 06:00:00 | 2025-11-02 08:00:00 |          14 |
+|        15 | Toronto     | Vancouver    | 2025-11-03 09:00:00 | 2025-11-03 11:00:00 |          15 |
+|        16 | Melbourne   | Sydney       | 2025-11-04 10:00:00 | 2025-11-04 11:30:00 |          16 |
+|        17 | London      | Doha         | 2025-11-05 08:00:00 | 2025-11-05 12:00:00 |          17 |
+|        18 | Doha        | New York     | 2025-11-05 14:00:00 | 2025-11-05 22:00:00 |          18 |
+|        19 | Paris       | Mumbai       | 2025-11-06 10:00:00 | 2025-11-06 20:00:00 |          19 |
+|        20 | Dubai       | Sydney       | 2025-11-07 10:00:00 | 2025-11-07 22:00:00 |          20 |
++-----------+-------------+--------------+---------------------+---------------------+-------------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO flight_crew VALUES
+    -> (1,'Capt. Rajesh Kumar','Pilot'),
+    -> (2,'Capt. Asha Nair','Co-Pilot'),
+    -> (3,'John Fernandes','Attendant'),
+    -> (4,'Priya Reddy','Attendant'),
+    -> (5,'Capt. Rohan Singh','Pilot'),
+    -> (6,'Capt. Anil Mehta','Co-Pilot'),
+    -> (7,'Kiran Das','Attendant'),
+    -> (8,'Mona Iyer','Attendant'),
+    -> (9,'Capt. Ravi Sharma','Pilot'),
+    -> (10,'Capt. Suresh Rao','Co-Pilot'),
+    -> (11,'Sara Malik','Attendant'),
+    -> (12,'Ankit Ghosh','Attendant'),
+    -> (13,'Capt. Tarun Verma','Pilot'),
+    -> (14,'Capt. Aarohi Kapoor','Co-Pilot'),
+    -> (15,'Neel Joshi','Attendant'),
+    -> (16,'Ritu Jain','Attendant'),
+    -> (17,'Capt. Aman Shah','Pilot'),
+    -> (18,'Capt. Divya Khanna','Co-Pilot'),
+    -> (19,'Riya Bose','Attendant'),
+    -> (20,'Manav Patel','Attendant');
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table flight_crew;
++---------+---------------------+-----------+
+| crew_id | name                | role      |
++---------+---------------------+-----------+
+|       1 | Capt. Rajesh Kumar  | Pilot     |
+|       2 | Capt. Asha Nair     | Co-Pilot  |
+|       3 | John Fernandes      | Attendant |
+|       4 | Priya Reddy         | Attendant |
+|       5 | Capt. Rohan Singh   | Pilot     |
+|       6 | Capt. Anil Mehta    | Co-Pilot  |
+|       7 | Kiran Das           | Attendant |
+|       8 | Mona Iyer           | Attendant |
+|       9 | Capt. Ravi Sharma   | Pilot     |
+|      10 | Capt. Suresh Rao    | Co-Pilot  |
+|      11 | Sara Malik          | Attendant |
+|      12 | Ankit Ghosh         | Attendant |
+|      13 | Capt. Tarun Verma   | Pilot     |
+|      14 | Capt. Aarohi Kapoor | Co-Pilot  |
+|      15 | Neel Joshi          | Attendant |
+|      16 | Ritu Jain           | Attendant |
+|      17 | Capt. Aman Shah     | Pilot     |
+|      18 | Capt. Divya Khanna  | Co-Pilot  |
+|      19 | Riya Bose           | Attendant |
+|      20 | Manav Patel         | Attendant |
++---------+---------------------+-----------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO flight_crew_assignment VALUES
+    -> (1,1,1,'2025-10-19 06:00'),
+    -> (2,2,1,'2025-10-19 06:00'),
+    -> (3,3,1,'2025-10-19 06:00'),
+    -> (4,4,2,'2025-10-20 07:00'),
+    -> (5,5,2,'2025-10-20 07:00'),
+    -> (6,6,3,'2025-10-21 05:00'),
+    -> (7,7,3,'2025-10-21 05:00'),
+    -> (8,8,4,'2025-10-22 08:00'),
+    -> (9,9,5,'2025-10-23 06:00'),
+    -> (10,10,5,'2025-10-23 06:00'),
+    -> (11,11,6,'2025-10-24 09:00'),
+    -> (12,12,7,'2025-10-25 12:00'),
+    -> (13,13,8,'2025-10-26 05:00'),
+    -> (14,14,9,'2025-10-27 07:00'),
+    -> (15,15,10,'2025-10-28 08:00'),
+    -> (16,16,11,'2025-10-29 07:00'),
+    -> (17,17,12,'2025-10-30 10:00'),
+    -> (18,18,13,'2025-10-31 06:00'),
+    -> (19,19,14,'2025-11-01 09:00'),
+    -> (20,20,15,'2025-11-02 11:00');
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table flight_crew_assignment;
++-----------+---------+-----------+---------------------+
+| assign_id | crew_id | flight_id | duty_date_time      |
++-----------+---------+-----------+---------------------+
+|         1 |       1 |         1 | 2025-10-19 06:00:00 |
+|         2 |       2 |         1 | 2025-10-19 06:00:00 |
+|         3 |       3 |         1 | 2025-10-19 06:00:00 |
+|         4 |       4 |         2 | 2025-10-20 07:00:00 |
+|         5 |       5 |         2 | 2025-10-20 07:00:00 |
+|         6 |       6 |         3 | 2025-10-21 05:00:00 |
+|         7 |       7 |         3 | 2025-10-21 05:00:00 |
+|         8 |       8 |         4 | 2025-10-22 08:00:00 |
+|         9 |       9 |         5 | 2025-10-23 06:00:00 |
+|        10 |      10 |         5 | 2025-10-23 06:00:00 |
+|        11 |      11 |         6 | 2025-10-24 09:00:00 |
+|        12 |      12 |         7 | 2025-10-25 12:00:00 |
+|        13 |      13 |         8 | 2025-10-26 05:00:00 |
+|        14 |      14 |         9 | 2025-10-27 07:00:00 |
+|        15 |      15 |        10 | 2025-10-28 08:00:00 |
+|        16 |      16 |        11 | 2025-10-29 07:00:00 |
+|        17 |      17 |        12 | 2025-10-30 10:00:00 |
+|        18 |      18 |        13 | 2025-10-31 06:00:00 |
+|        19 |      19 |        14 | 2025-11-01 09:00:00 |
+|        20 |      20 |        15 | 2025-11-02 11:00:00 |
++-----------+---------+-----------+---------------------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO pricing VALUES
+    -> (1,1,'Economy',450.00),
+    -> (2,1,'Business',850.00),
+    -> (3,2,'Economy',500.00),
+    -> (4,2,'Business',950.00),
+    -> (5,3,'Economy',300.00),
+    -> (6,4,'Economy',250.00),
+    -> (7,5,'Economy',600.00),
+    -> (8,5,'Business',1200.00),
+    -> (9,6,'Economy',150.00),
+    -> (10,7,'Economy',200.00),
+    -> (11,8,'Economy',350.00),
+    -> (12,9,'Economy',400.00),
+    -> (13,10,'Economy',700.00),
+    -> (14,11,'Economy',150.00),
+    -> (15,12,'Economy',250.00),
+    -> (16,13,'Economy',900.00),
+    -> (17,14,'Economy',280.00),
+    -> (18,15,'Economy',420.00),
+    -> (19,16,'Economy',180.00),
+    -> (20,17,'Economy',600.00);
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table pricing;
++----------+-----------+------------+---------+
+| price_id | flight_id | seat_class | price   |
++----------+-----------+------------+---------+
+|        1 |         1 | Economy    |  450.00 |
+|        2 |         1 | Business   |  850.00 |
+|        3 |         2 | Economy    |  500.00 |
+|        4 |         2 | Business   |  950.00 |
+|        5 |         3 | Economy    |  300.00 |
+|        6 |         4 | Economy    |  250.00 |
+|        7 |         5 | Economy    |  600.00 |
+|        8 |         5 | Business   | 1200.00 |
+|        9 |         6 | Economy    |  150.00 |
+|       10 |         7 | Economy    |  200.00 |
+|       11 |         8 | Economy    |  350.00 |
+|       12 |         9 | Economy    |  400.00 |
+|       13 |        10 | Economy    |  700.00 |
+|       14 |        11 | Economy    |  150.00 |
+|       15 |        12 | Economy    |  250.00 |
+|       16 |        13 | Economy    |  900.00 |
+|       17 |        14 | Economy    |  280.00 |
+|       18 |        15 | Economy    |  420.00 |
+|       19 |        16 | Economy    |  180.00 |
+|       20 |        17 | Economy    |  600.00 |
++----------+-----------+------------+---------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO booking VALUES
+    -> (1,1,1,1,'2025-10-10','Confirmed','Paid','Card',450.00),
+    -> (2,2,2,3,'2025-10-11','Confirmed','Paid','UPI',500.00),
+    -> (3,3,3,5,'2025-10-12','Confirmed','Paid','NetBanking',300.00),
+    -> (4,4,4,6,'2025-10-13','Pending','Pending','UPI',250.00),
+    -> (5,5,5,7,'2025-10-14','Confirmed','Paid','Card',600.00),
+    -> (6,6,6,9,'2025-10-15','Confirmed','Paid','Cash',150.00),
+    -> (7,7,7,10,'2025-10-16','Cancelled','Pending','Card',200.00),
+    -> (8,8,8,11,'2025-10-17','Confirmed','Paid','UPI',350.00),
+    -> (9,9,9,12,'2025-10-18','Confirmed','Paid','Card',400.00),
+    -> (10,10,10,13,'2025-10-19','Pending','Pending','Cash',700.00),
+    -> (11,11,11,14,'2025-10-20','Confirmed','Paid','UPI',150.00),
+    -> (12,12,12,15,'2025-10-21','Confirmed','Paid','NetBanking',250.00),
+    -> (13,13,13,16,'2025-10-22','Pending','Pending','UPI',900.00),
+    -> (14,14,14,17,'2025-10-23','Confirmed','Paid','Card',280.00),
+    -> (15,15,15,18,'2025-10-24','Confirmed','Paid','UPI',420.00),
+    -> (16,16,16,19,'2025-10-25','Confirmed','Paid','NetBanking',180.00),
+    -> (17,17,17,20,'2025-10-26','Pending','Pending','Card',600.00),
+    -> (18,18,18,2,'2025-10-27','Confirmed','Paid','UPI',850.00),
+    -> (19,19,19,4,'2025-10-28','Confirmed','Paid','Card',950.00),
+    -> (20,20,20,8,'2025-10-29','Pending','Pending','Cash',1200.00);
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table booking;
++------------+--------------+-----------+----------+--------------+----------------+----------------+----------------+------------+
+| booking_id | passenger_id | flight_id | price_id | booking_date | booking_status | payment_status | payment_method | amt_to_pay |
++------------+--------------+-----------+----------+--------------+----------------+----------------+----------------+------------+
+|          1 |            1 |         1 |        1 | 2025-10-10   | Confirmed      | Paid           | Card           |     450.00 |
+|          2 |            2 |         2 |        3 | 2025-10-11   | Confirmed      | Paid           | UPI            |     500.00 |
+|          3 |            3 |         3 |        5 | 2025-10-12   | Confirmed      | Paid           | NetBanking     |     300.00 |
+|          4 |            4 |         4 |        6 | 2025-10-13   | Pending        | Pending        | UPI            |     250.00 |
+|          5 |            5 |         5 |        7 | 2025-10-14   | Confirmed      | Paid           | Card           |     600.00 |
+|          6 |            6 |         6 |        9 | 2025-10-15   | Confirmed      | Paid           | Cash           |     150.00 |
+|          7 |            7 |         7 |       10 | 2025-10-16   | Cancelled      | Pending        | Card           |     200.00 |
+|          8 |            8 |         8 |       11 | 2025-10-17   | Confirmed      | Paid           | UPI            |     350.00 |
+|          9 |            9 |         9 |       12 | 2025-10-18   | Confirmed      | Paid           | Card           |     400.00 |
+|         10 |           10 |        10 |       13 | 2025-10-19   | Pending        | Pending        | Cash           |     700.00 |
+|         11 |           11 |        11 |       14 | 2025-10-20   | Confirmed      | Paid           | UPI            |     150.00 |
+|         12 |           12 |        12 |       15 | 2025-10-21   | Confirmed      | Paid           | NetBanking     |     250.00 |
+|         13 |           13 |        13 |       16 | 2025-10-22   | Pending        | Pending        | UPI            |     900.00 |
+|         14 |           14 |        14 |       17 | 2025-10-23   | Confirmed      | Paid           | Card           |     280.00 |
+|         15 |           15 |        15 |       18 | 2025-10-24   | Confirmed      | Paid           | UPI            |     420.00 |
+|         16 |           16 |        16 |       19 | 2025-10-25   | Confirmed      | Paid           | NetBanking     |     180.00 |
+|         17 |           17 |        17 |       20 | 2025-10-26   | Pending        | Pending        | Card           |     600.00 |
+|         18 |           18 |        18 |        2 | 2025-10-27   | Confirmed      | Paid           | UPI            |     850.00 |
+|         19 |           19 |        19 |        4 | 2025-10-28   | Confirmed      | Paid           | Card           |     950.00 |
+|         20 |           20 |        20 |        8 | 2025-10-29   | Pending        | Pending        | Cash           |    1200.00 |
++------------+--------------+-----------+----------+--------------+----------------+----------------+----------------+------------+
+20 rows in set (0.00 sec)
+
+mysql> INSERT INTO itinerary VALUES
+    -> (1,1,1,1),
+    -> (2,1,1,2),
+    -> (3,2,2,1),
+    -> (4,3,3,1),
+    -> (5,3,3,2),
+    -> (6,4,4,1),
+    -> (7,5,5,1),
+    -> (8,5,5,2),
+    -> (9,6,6,1),
+    -> (10,7,7,1),
+    -> (11,7,7,2),
+    -> (12,8,8,1),
+    -> (13,8,8,2),
+    -> (14,9,9,1),
+    -> (15,10,10,1),
+    -> (16,10,10,2),
+    -> (17,11,11,1),
+    -> (18,11,11,2),
+    -> (19,12,12,1),
+    -> (20,12,12,2);
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> table itinerary;
++--------------+--------------+------------+--------+
+| itinerary_id | passenger_id | booking_id | seq_no |
++--------------+--------------+------------+--------+
+|            1 |            1 |          1 |      1 |
+|            2 |            1 |          1 |      2 |
+|            3 |            2 |          2 |      1 |
+|            4 |            3 |          3 |      1 |
+|            5 |            3 |          3 |      2 |
+|            6 |            4 |          4 |      1 |
+|            7 |            5 |          5 |      1 |
+|            8 |            5 |          5 |      2 |
+|            9 |            6 |          6 |      1 |
+|           10 |            7 |          7 |      1 |
+|           11 |            7 |          7 |      2 |
+|           12 |            8 |          8 |      1 |
+|           13 |            8 |          8 |      2 |
+|           14 |            9 |          9 |      1 |
+|           15 |           10 |         10 |      1 |
+|           16 |           10 |         10 |      2 |
+|           17 |           11 |         11 |      1 |
+|           18 |           11 |         11 |      2 |
+|           19 |           12 |         12 |      1 |
+|           20 |           12 |         12 |      2 |
++--------------+--------------+------------+--------+
+20 rows in set (0.00 sec)

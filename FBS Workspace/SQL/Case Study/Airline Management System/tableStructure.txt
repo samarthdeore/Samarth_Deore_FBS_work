@@ -1,0 +1,209 @@
+mysql> use airline;
+Database changed
+mysql> CREATE TABLE passengers (
+    ->     passenger_id INT PRIMARY KEY,
+    ->     f_name VARCHAR(30) NOT NULL,
+    ->     l_name VARCHAR(30) NOT NULL,
+    ->     m_no BIGINT NOT NULL UNIQUE,
+    ->     email VARCHAR(30) NOT NULL UNIQUE,
+    ->     seat_pref VARCHAR(15),
+    ->     CHECK (seat_pref IN ('aisle', 'window', 'middle'))
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> table passengers;
+Empty set (0.00 sec)
+
+mysql> show passengers;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passengers' at line 1
+mysql> show tables;
++-------------------+
+| Tables_in_airline |
++-------------------+
+| passengers        |
++-------------------+
+1 row in set (0.02 sec)
+
+mysql> desc passengers;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| passenger_id | int         | NO   | PRI | NULL    |       |
+| f_name       | varchar(30) | NO   |     | NULL    |       |
+| l_name       | varchar(30) | NO   |     | NULL    |       |
+| m_no         | bigint      | NO   | UNI | NULL    |       |
+| email        | varchar(30) | NO   | UNI | NULL    |       |
+| seat_pref    | varchar(15) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> CREATE TABLE aircraft (
+    ->     aircraft_id INT PRIMARY KEY,
+    ->     registr_no INT NOT NULL UNIQUE,
+    ->     model VARCHAR(30) NOT NULL,
+    ->     total_seats INT NOT NULL CHECK (total_seats > 0)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc aircraft;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| aircraft_id | int         | NO   | PRI | NULL    |       |
+| registr_no  | int         | NO   | UNI | NULL    |       |
+| model       | varchar(30) | NO   |     | NULL    |       |
+| total_seats | int         | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE flight (
+    ->     flight_id INT PRIMARY KEY,
+    ->     destination VARCHAR(30) NOT NULL,
+    ->     origin VARCHAR(30) NOT NULL,
+    ->     departure_time DATETIME NOT NULL,
+    ->     arrival_time DATETIME NOT NULL,
+    ->     aircraft_id INT NOT NULL,
+    ->     FOREIGN KEY (aircraft_id) REFERENCES aircraft(aircraft_id),
+    ->     CHECK (arrival_time > departure_time)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc flight;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| flight_id      | int         | NO   | PRI | NULL    |       |
+| destination    | varchar(30) | NO   |     | NULL    |       |
+| origin         | varchar(30) | NO   |     | NULL    |       |
+| departure_time | datetime    | NO   |     | NULL    |       |
+| arrival_time   | datetime    | NO   |     | NULL    |       |
+| aircraft_id    | int         | NO   | MUL | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> CREATE TABLE flight_crew (
+    ->     crew_id INT PRIMARY KEY,
+    ->     name VARCHAR(50) NOT NULL,
+    ->     role VARCHAR(30) NOT NULL CHECK (role IN ('Pilot', 'Co-Pilot', 'Attendant'))
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc flight_crew;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| crew_id | int         | NO   | PRI | NULL    |       |
+| name    | varchar(50) | NO   |     | NULL    |       |
+| role    | varchar(30) | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE flight_crew_assignment (
+    ->     assign_id INT PRIMARY KEY,
+    ->     crew_id INT NOT NULL,
+    ->     flight_id INT NOT NULL,
+    ->     duty_date_time DATETIME NOT NULL,
+    ->
+    ->     FOREIGN KEY (crew_id) REFERENCES flight_crew(crew_id),
+    ->     FOREIGN KEY (flight_id) REFERENCES flight(flight_id)
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> CREATE TABLE pricing (
+    ->     price_id INT PRIMARY KEY,
+    ->     flight_id INT NOT NULL,
+    ->     seat_class VARCHAR(20) NOT NULL,
+    ->     price DECIMAL(10,2) NOT NULL CHECK (price > 0),
+    ->
+    ->     FOREIGN KEY (flight_id) REFERENCES flight(flight_id),
+    ->     CHECK (seat_class IN ('Economy', 'Business', 'First'))
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc pricing;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| price_id   | int           | NO   | PRI | NULL    |       |
+| flight_id  | int           | NO   | MUL | NULL    |       |
+| seat_class | varchar(20)   | NO   |     | NULL    |       |
+| price      | decimal(10,2) | NO   |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE booking (
+    ->     booking_id INT PRIMARY KEY,
+    ->     passenger_id INT NOT NULL,
+    ->     flight_id INT NOT NULL,
+    ->     price_id INT NOT NULL,
+    ->     booking_date DATE NOT NULL,
+    ->     booking_status VARCHAR(20) NOT NULL,
+    ->     payment_status VARCHAR(20) NOT NULL,
+    ->     payment_method VARCHAR(20),
+    ->     amt_to_pay DECIMAL(10,2) NOT NULL CHECK (amt_to_pay > 0),
+    ->
+    ->     FOREIGN KEY (passenger_id) REFERENCES passengers(passenger_id),
+    ->     FOREIGN KEY (flight_id) REFERENCES flight(flight_id),
+    ->     FOREIGN KEY (price_id) REFERENCES pricing(price_id),
+    ->     CHECK (booking_status IN ('Confirmed', 'Pending', 'Cancelled')),
+    ->     CHECK (payment_status IN ('Paid', 'Pending', 'Failed')),
+    ->     CHECK (payment_method IN ('Card', 'UPI', 'NetBanking', 'Cash'))
+    -> );
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc booking;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| booking_id     | int           | NO   | PRI | NULL    |       |
+| passenger_id   | int           | NO   | MUL | NULL    |       |
+| flight_id      | int           | NO   | MUL | NULL    |       |
+| price_id       | int           | NO   | MUL | NULL    |       |
+| booking_date   | date          | NO   |     | NULL    |       |
+| booking_status | varchar(20)   | NO   |     | NULL    |       |
+| payment_status | varchar(20)   | NO   |     | NULL    |       |
+| payment_method | varchar(20)   | YES  |     | NULL    |       |
+| amt_to_pay     | decimal(10,2) | NO   |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE TABLE itinerary (
+    ->     itinerary_id INT PRIMARY KEY,
+    ->     passenger_id INT NOT NULL,
+    ->     booking_id INT NOT NULL,
+    ->     seq_no INT NOT NULL,
+    ->
+    ->     FOREIGN KEY (passenger_id) REFERENCES passengers(passenger_id),
+    ->     FOREIGN KEY (booking_id) REFERENCES booking(booking_id),
+    ->     CHECK (seq_no > 0)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc itinerary;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| itinerary_id | int  | NO   | PRI | NULL    |       |
+| passenger_id | int  | NO   | MUL | NULL    |       |
+| booking_id   | int  | NO   | MUL | NULL    |       |
+| seq_no       | int  | NO   |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tables' at line 1
+mysql> desc tables;
+ERROR 1146 (42S02): Table 'airline.tables' doesn't exist
+mysql> show tables;
++------------------------+
+| Tables_in_airline      |
++------------------------+
+| aircraft               |
+| booking                |
+| flight                 |
+| flight_crew            |
+| flight_crew_assignment |
+| itinerary              |
+| passengers             |
+| pricing                |
++------------------------+
