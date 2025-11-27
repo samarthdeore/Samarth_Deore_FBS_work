@@ -21,7 +21,7 @@ This repository contains <b>assignments</b>, <b>projects</b>, and <b>classwork</
 <details>
 <summary><strong>Click to Expand</strong></summary>
 
-### 📝 Assignments  
+#### 📝 Assignments  
 👉 **[Open Assignments](https://github.com/samarthdeore/Samarth_Deore_FBS_work/tree/main/FBS%20Workspace/C%20programing)**
 
 ### 🚀 Projects  
